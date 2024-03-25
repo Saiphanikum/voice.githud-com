@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to Text and Text to Speech</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Voice to Text and Text to Speech</h1>
+    
+    <div id="recognitionStatus"></div>
+    <button onclick="startSpeechRecognition()">Start Speaking</button>
+    <button onclick="stopSpeechRecognition()">Stop Speaking</button>
+    
+    <div id="output"></div>
+
+    <textarea id="textToSpeech" placeholder="Type or speak text here..." oninput="handleTextInput()"></textarea>
+
+    <label for="rate">Rate (0.1 to 2):</label>
+    <input type="number" id="rate" step="0.1" min="0.1" max="2" value="1">
+
+    <label for="pitch">Pitch (0 to 2):</label>
+    <input type="number" id="pitch" step="0.1" min="0" max="2" value="1">
+
+    <label for="languageSelect">Select Language:</label>
+    <select id="languageSelect">
+        <option value="en-US">English</option>
+        <option value="te-IN">Telugu</option>
+        <option value="hi-IN">Hindi</option>
+    </select>
+
+    <button onclick="convertToSpeech()">Convert to Speech</button>
+    <button onclick="clearText()">Clear Text</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
